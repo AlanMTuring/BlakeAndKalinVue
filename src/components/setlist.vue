@@ -129,14 +129,14 @@ export default {
   },
   methods: {
     getSongs: function() {
-      axios.get("http://localhost:3002/api/songs").then(response => {
+      axios.get("/api/songs").then(response => {
         this.songs = response.data;
         return true;
       }).catch(err => {
       });
     },
     addSong: function() {
-      axios.post("http://localhost:3002/api/songs", {
+      axios.post("/api/songs", {
         title: this.title,
         artist: this.artist,
         editing: this.editing,
@@ -172,7 +172,7 @@ export default {
     //   });
     // },
     deleteSong: function(song) {
-      axios.delete("http://localhost:3002/api/songs/" + song.id).then(response => {
+      axios.delete("/api/songs/" + song.id).then(response => {
         this.getSongs();
         this.response = '';
         return true;
@@ -198,7 +198,7 @@ export default {
       this.drag = song;
     },
     dropSong: function(song) {
-      axios.put("http://localhost:3002/api/songs/" + this.drag.id, {
+      axios.put("/api/songs/" + this.drag.id, {
         title: this.drag.title,
         artist: this.drag.artist,
         orderChange: true,
