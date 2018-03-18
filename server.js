@@ -7,24 +7,24 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 //THIS CODE WAS USED TO FIX AN OLD PROBLEM, IT MIGHT COME BACK
-// app.use(function (req, res, next) {
+app.use(function (req, res, next) {
 
-//     // Website you wish to allow to connect
-//     res.setHeader('Access-Control-Allow-Origin', 'localhost');//http://165.227.16.199');
+    // Website you wish to allow to connect
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');//http://165.227.16.199');
 
-//     // Request methods you wish to allow
-//     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    // Request methods you wish to allow
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
 
-//     // Request headers you wish to allow
-//     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+    // Request headers you wish to allow
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
 
-//     // Set to true if you need the website to include cookies in the requests sent
-//     // to the API (e.g. in case you use sessions)
-//     res.setHeader('Access-Control-Allow-Credentials', true);
+    // Set to true if you need the website to include cookies in the requests sent
+    // to the API (e.g. in case you use sessions)
+    res.setHeader('Access-Control-Allow-Credentials', true);
 
-//     // Pass to next layer of middleware
-//     next();
-// });
+    // Pass to next layer of middleware
+    next();
+});
 
 //sets up a directory called "public" that we'll serve, just like an ordinary web server
 app.use(express.static('public'))
@@ -38,7 +38,7 @@ app.get('/api/songs', (req, res) => {
 
 app.post('/api/songs', (req, res) => {
   id = id + 1;
-  let song = {id:id, text:req.body.text, priority:req.body.priority, completed: req.body.completed};
+  let song = {id:id, title:req.body.title, artist:req.body.artist, editing:req.body.editing};//, completed: req.body.completed};
   songs.push(song);
   res.send(song);
 });
@@ -50,9 +50,9 @@ app.put('/api/songs/:id', (req, res) => {
     let songsMap = songs.map(song => { return song.id; });
     let index = songsMap.indexOf(id);
     let song = songs[index];
-    song.completed = req.body.completed;
-    song.text = req.body.text;
-    song.priority = req.body.priority;
+    song.title = req.body.title;
+    song.artist = req.body.artist;
+    song.editing = req.body.editing;
     // handle drag and drop re-ordering
     if (req.body.orderChange) {
       let indexTarget = songsMap.indexOf(req.body.orderTarget);

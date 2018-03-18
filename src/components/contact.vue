@@ -1,5 +1,6 @@
 <template>
     <div>
+        <h1 id="title">Contact</h1>
         <div id="order-text">
             <p>To book a gig, ask questions, or just send fan-mail to Blake and Kalin, fill out the form below and they will get back to you.</p>
         </div>
@@ -20,12 +21,19 @@
 
 
 <style scoped>
+#title {
+    margin-top: 160px;
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    font-size: 45px;
+}
+
 #order-text {
     text-align: center;
     color: #000;
-    font-family: 'Great Vibes', cursive;
-    font-size: 40px;
-    margin: 200px 300px 30px 300px;
+    font-family: 'Pacifico', cursive;
+    font-size: 28px;
+    margin: auto 300px 30px 300px;
 }
 
 

@@ -23,11 +23,4 @@ body {
     -moz-osx-font-smoothing: grayscale;
     
 }
-.container {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-}
 </style>

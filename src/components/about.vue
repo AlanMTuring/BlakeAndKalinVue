@@ -30,16 +30,18 @@
 <style scoped>
 #about-title {
     text-align: center;
-    font-family: 'Rammetto One', cursive;
+    /* font-family: 'Rammetto One', cursive; */
+    font-family: 'Pacifico', cursive;
     font-size: 45px;
 }
 
 #about-content {
-    margin: 240px 0 200px 0;
+    margin: 160px 0 200px 0;
 }
 
 #about-text p {
-    font-family: 'Rammetto One', cursive;
+    /* font-family: 'Rammetto One', cursive; */
+    font-family: 'Pacifico', cursive;
     margin: 20px 17%;
 }
 

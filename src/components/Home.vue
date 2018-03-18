@@ -5,7 +5,7 @@
                 <h1>Wedding Singers</h1>
                 <p>The Dynamic Duo can sing covers of your favorite artists live, at your wedding!</p>
             </div>
-            <div class="right-side" style="background-color: #FFF;">
+            <div class="right-side">
                 <img src="../assets/mcentire-wedding-cropped.jpg" id="home-image" alt="Singin It Goooood">
             </div>
         </div>
@@ -23,9 +23,9 @@
         </div>
 
 
-        <div class="space"></div>
+        <div class="blake-space"></div>
 
-        <div class="container" style="background-color: #f2f2f2;">
+        <div class="container">
             <div class="left-side">
                 <h1>Bestest Friends</h1>
                 <p>You ain't seen a bromance til you seen them.</p>
@@ -43,6 +43,13 @@
 
 
 <style scoped>
+.container {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
 
 .left-side {
     margin: 0 20px 0 15%;
@@ -82,8 +89,14 @@
     margin: 0;
 }
 
+.blake-space {
+    height: 250px;
+    background: url(../assets/singing-blake.jpg) no-repeat center fixed; 
+    background-size: cover;
+}
+
 .space {
-    height: 200px;
+    height: 250px;
     background: url(../assets/me.jpg) no-repeat center fixed; 
     background-size: cover;
 }

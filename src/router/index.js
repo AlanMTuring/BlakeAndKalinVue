@@ -4,7 +4,7 @@ import Home from '@/components/Home'
 import Setlist from '@/components/setlist'
 import About from '@/components/about'
 import Contact from '@/components/contact'
-// import Music from '@/components/Music'
+import Photos from '@/components/photos'
 
 Vue.use(Router)
 
@@ -30,10 +30,10 @@ export default new Router({
       name: 'SetList',
       component: Setlist
     },
-    // {
-    //   path: '/Photos',
-    //   name: 'Photos',
-    //   component: Photos
-    // },
+    {
+      path: '/Photos',
+      name: 'Photos',
+      component: Photos
+    },
   ]
 })
